@@ -1,5 +1,7 @@
 package com.bistiboy.agricola;
 
+import java.util.Set;
+
 // This interface overrides the generated interface and will be returned by factory
 public interface GamerBoard extends MGamerBoard
 {
@@ -8,5 +10,9 @@ public interface GamerBoard extends MGamerBoard
 	//
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
+	
+	// to return the set of all Pipe object contained inside each Plug of each Parcel  
+	//  of the current GamerBoard Object
+	//public Set<Pipe> getAllPipes();
 
 }

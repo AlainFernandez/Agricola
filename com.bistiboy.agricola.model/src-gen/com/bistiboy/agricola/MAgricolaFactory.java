@@ -112,6 +112,42 @@ public interface MAgricolaFactory extends EFactory {
 	Round createRound();
 
 	/**
+	 * Returns a new object of class '<em>In Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>In Plug</em>'.
+	 * @generated
+	 */
+	InPlug createInPlug();
+
+	/**
+	 * Returns a new object of class '<em>Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plug</em>'.
+	 * @generated
+	 */
+	Plug createPlug();
+
+	/**
+	 * Returns a new object of class '<em>Out Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Out Plug</em>'.
+	 * @generated
+	 */
+	OutPlug createOutPlug();
+
+	/**
+	 * Returns a new object of class '<em>Pipe</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pipe</em>'.
+	 * @generated
+	 */
+	Pipe createPipe();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

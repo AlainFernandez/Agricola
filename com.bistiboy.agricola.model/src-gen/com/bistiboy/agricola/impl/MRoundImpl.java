@@ -3,17 +3,21 @@
 package com.bistiboy.agricola.impl;
 
 import com.bistiboy.agricola.ActionCard;
-import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Round;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
- public class MRoundImpl extends MinimalEObjectImpl.Container implements Round {
+public class MRoundImpl extends MinimalEObjectImpl.Container implements Round {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

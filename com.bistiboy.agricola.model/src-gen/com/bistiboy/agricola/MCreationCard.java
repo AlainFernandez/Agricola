@@ -4,7 +4,6 @@ package com.bistiboy.agricola;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Creation Card</b></em>'.

@@ -142,13 +142,31 @@ public interface MAgricolaPackage extends EPackage {
 	int PARCEL__Y = 2;
 
 	/**
+	 * The feature id for the '<em><b>In</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARCEL__IN = 3;
+
+	/**
+	 * The feature id for the '<em><b>Out</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARCEL__OUT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Parcel</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARCEL_FEATURE_COUNT = 3;
+	int PARCEL_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Parcel</em>' class.
@@ -610,6 +628,217 @@ public interface MAgricolaPackage extends EPackage {
 	int ROUND_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.bistiboy.agricola.impl.MPlugImpl <em>Plug</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.bistiboy.agricola.impl.MPlugImpl
+	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getPlug()
+	 * @generated
+	 */
+	int PLUG = 12;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUG__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Pipe</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUG__PIPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUG_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUG_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.bistiboy.agricola.impl.MInPlugImpl <em>In Plug</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.bistiboy.agricola.impl.MInPlugImpl
+	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getInPlug()
+	 * @generated
+	 */
+	int IN_PLUG = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PLUG__NAME = PLUG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pipe</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PLUG__PIPE = PLUG__PIPE;
+
+	/**
+	 * The number of structural features of the '<em>In Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PLUG_FEATURE_COUNT = PLUG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>In Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IN_PLUG_OPERATION_COUNT = PLUG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.bistiboy.agricola.impl.MOutPlugImpl <em>Out Plug</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.bistiboy.agricola.impl.MOutPlugImpl
+	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getOutPlug()
+	 * @generated
+	 */
+	int OUT_PLUG = 13;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUT_PLUG__NAME = PLUG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Pipe</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUT_PLUG__PIPE = PLUG__PIPE;
+
+	/**
+	 * The number of structural features of the '<em>Out Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUT_PLUG_FEATURE_COUNT = PLUG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Out Plug</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUT_PLUG_OPERATION_COUNT = PLUG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.bistiboy.agricola.impl.MPipeImpl <em>Pipe</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.bistiboy.agricola.impl.MPipeImpl
+	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getPipe()
+	 * @generated
+	 */
+	int PIPE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE__UNIT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE__VALUE = 2;
+
+	/**
+	 * The feature id for the '<em><b>In</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE__IN = 3;
+
+	/**
+	 * The feature id for the '<em><b>Out</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE__OUT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Pipe</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Pipe</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.bistiboy.agricola.ParcelType <em>Parcel Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -617,8 +846,7 @@ public interface MAgricolaPackage extends EPackage {
 	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getParcelType()
 	 * @generated
 	 */
-	int PARCEL_TYPE = 11;
-
+	int PARCEL_TYPE = 15;
 
 	/**
 	 * The meta object id for the '{@link com.bistiboy.agricola.Resource <em>Resource</em>}' enum.
@@ -628,7 +856,7 @@ public interface MAgricolaPackage extends EPackage {
 	 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 12;
+	int RESOURCE = 16;
 
 
 	/**
@@ -704,6 +932,28 @@ public interface MAgricolaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParcel_Y();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.bistiboy.agricola.MParcel#getIn <em>In</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>In</em>'.
+	 * @see com.bistiboy.agricola.MParcel#getIn()
+	 * @see #getParcel()
+	 * @generated
+	 */
+	EReference getParcel_In();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.bistiboy.agricola.MParcel#getOut <em>Out</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Out</em>'.
+	 * @see com.bistiboy.agricola.MParcel#getOut()
+	 * @see #getParcel()
+	 * @generated
+	 */
+	EReference getParcel_Out();
 
 	/**
 	 * Returns the meta object for class '{@link com.bistiboy.agricola.MGamer <em>Gamer</em>}'.
@@ -1014,6 +1264,123 @@ public interface MAgricolaPackage extends EPackage {
 	EReference getRound_Actioncard();
 
 	/**
+	 * Returns the meta object for class '{@link com.bistiboy.agricola.MInPlug <em>In Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>In Plug</em>'.
+	 * @see com.bistiboy.agricola.MInPlug
+	 * @generated
+	 */
+	EClass getInPlug();
+
+	/**
+	 * Returns the meta object for class '{@link com.bistiboy.agricola.MPlug <em>Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Plug</em>'.
+	 * @see com.bistiboy.agricola.MPlug
+	 * @generated
+	 */
+	EClass getPlug();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bistiboy.agricola.MPlug#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.bistiboy.agricola.MPlug#getName()
+	 * @see #getPlug()
+	 * @generated
+	 */
+	EAttribute getPlug_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.bistiboy.agricola.MPlug#getPipe <em>Pipe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Pipe</em>'.
+	 * @see com.bistiboy.agricola.MPlug#getPipe()
+	 * @see #getPlug()
+	 * @generated
+	 */
+	EReference getPlug_Pipe();
+
+	/**
+	 * Returns the meta object for class '{@link com.bistiboy.agricola.MOutPlug <em>Out Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Out Plug</em>'.
+	 * @see com.bistiboy.agricola.MOutPlug
+	 * @generated
+	 */
+	EClass getOutPlug();
+
+	/**
+	 * Returns the meta object for class '{@link com.bistiboy.agricola.MPipe <em>Pipe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Pipe</em>'.
+	 * @see com.bistiboy.agricola.MPipe
+	 * @generated
+	 */
+	EClass getPipe();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bistiboy.agricola.MPipe#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.bistiboy.agricola.MPipe#getName()
+	 * @see #getPipe()
+	 * @generated
+	 */
+	EAttribute getPipe_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bistiboy.agricola.MPipe#getUnit <em>Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see com.bistiboy.agricola.MPipe#getUnit()
+	 * @see #getPipe()
+	 * @generated
+	 */
+	EAttribute getPipe_Unit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bistiboy.agricola.MPipe#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see com.bistiboy.agricola.MPipe#getValue()
+	 * @see #getPipe()
+	 * @generated
+	 */
+	EAttribute getPipe_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.bistiboy.agricola.MPipe#getIn <em>In</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>In</em>'.
+	 * @see com.bistiboy.agricola.MPipe#getIn()
+	 * @see #getPipe()
+	 * @generated
+	 */
+	EReference getPipe_In();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.bistiboy.agricola.MPipe#getOut <em>Out</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Out</em>'.
+	 * @see com.bistiboy.agricola.MPipe#getOut()
+	 * @see #getPipe()
+	 * @generated
+	 */
+	EReference getPipe_Out();
+
+	/**
 	 * Returns the meta object for enum '{@link com.bistiboy.agricola.ParcelType <em>Parcel Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1115,6 +1482,22 @@ public interface MAgricolaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARCEL__Y = eINSTANCE.getParcel_Y();
+
+		/**
+		 * The meta object literal for the '<em><b>In</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARCEL__IN = eINSTANCE.getParcel_In();
+
+		/**
+		 * The meta object literal for the '<em><b>Out</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARCEL__OUT = eINSTANCE.getParcel_Out();
 
 		/**
 		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MGamerImpl <em>Gamer</em>}' class.
@@ -1365,6 +1748,102 @@ public interface MAgricolaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROUND__ACTIONCARD = eINSTANCE.getRound_Actioncard();
+
+		/**
+		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MInPlugImpl <em>In Plug</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.bistiboy.agricola.impl.MInPlugImpl
+		 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getInPlug()
+		 * @generated
+		 */
+		EClass IN_PLUG = eINSTANCE.getInPlug();
+
+		/**
+		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MPlugImpl <em>Plug</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.bistiboy.agricola.impl.MPlugImpl
+		 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getPlug()
+		 * @generated
+		 */
+		EClass PLUG = eINSTANCE.getPlug();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLUG__NAME = eINSTANCE.getPlug_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Pipe</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLUG__PIPE = eINSTANCE.getPlug_Pipe();
+
+		/**
+		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MOutPlugImpl <em>Out Plug</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.bistiboy.agricola.impl.MOutPlugImpl
+		 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getOutPlug()
+		 * @generated
+		 */
+		EClass OUT_PLUG = eINSTANCE.getOutPlug();
+
+		/**
+		 * The meta object literal for the '{@link com.bistiboy.agricola.impl.MPipeImpl <em>Pipe</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.bistiboy.agricola.impl.MPipeImpl
+		 * @see com.bistiboy.agricola.impl.MAgricolaPackageImpl#getPipe()
+		 * @generated
+		 */
+		EClass PIPE = eINSTANCE.getPipe();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIPE__NAME = eINSTANCE.getPipe_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIPE__UNIT = eINSTANCE.getPipe_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PIPE__VALUE = eINSTANCE.getPipe_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>In</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPE__IN = eINSTANCE.getPipe_In();
+
+		/**
+		 * The meta object literal for the '<em><b>Out</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPE__OUT = eINSTANCE.getPipe_Out();
 
 		/**
 		 * The meta object literal for the '{@link com.bistiboy.agricola.ParcelType <em>Parcel Type</em>}' enum.

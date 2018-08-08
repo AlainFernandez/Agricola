@@ -4,7 +4,6 @@ package com.bistiboy.agricola;
 
 import org.eclipse.emf.ecore.EObject;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Parcel</b></em>'.
@@ -17,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.bistiboy.agricola.MParcel#getType <em>Type</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MParcel#getX <em>X</em>}</li>
  *   <li>{@link com.bistiboy.agricola.MParcel#getY <em>Y</em>}</li>
+ *   <li>{@link com.bistiboy.agricola.MParcel#getIn <em>In</em>}</li>
+ *   <li>{@link com.bistiboy.agricola.MParcel#getOut <em>Out</em>}</li>
  * </ul>
  *
  * @see com.bistiboy.agricola.MAgricolaPackage#getParcel()
@@ -104,5 +105,57 @@ public interface MParcel extends EObject {
 	 * @generated
 	 */
 	void setY(int value);
+
+	/**
+	 * Returns the value of the '<em><b>In</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>In</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>In</em>' containment reference.
+	 * @see #setIn(InPlug)
+	 * @see com.bistiboy.agricola.MAgricolaPackage#getParcel_In()
+	 * @model containment="true"
+	 * @generated
+	 */
+	InPlug getIn();
+
+	/**
+	 * Sets the value of the '{@link com.bistiboy.agricola.MParcel#getIn <em>In</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>In</em>' containment reference.
+	 * @see #getIn()
+	 * @generated
+	 */
+	void setIn(InPlug value);
+
+	/**
+	 * Returns the value of the '<em><b>Out</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Out</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Out</em>' containment reference.
+	 * @see #setOut(OutPlug)
+	 * @see com.bistiboy.agricola.MAgricolaPackage#getParcel_Out()
+	 * @model containment="true"
+	 * @generated
+	 */
+	OutPlug getOut();
+
+	/**
+	 * Sets the value of the '{@link com.bistiboy.agricola.MParcel#getOut <em>Out</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Out</em>' containment reference.
+	 * @see #getOut()
+	 * @generated
+	 */
+	void setOut(OutPlug value);
 
 } // MParcel

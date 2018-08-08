@@ -112,6 +112,22 @@ public class AgricolaAdapterFactory extends AdapterFactoryImpl {
 				return createRoundAdapter();
 			}
 			@Override
+			public Adapter caseInPlug(InPlug object) {
+				return createInPlugAdapter();
+			}
+			@Override
+			public Adapter casePlug(Plug object) {
+				return createPlugAdapter();
+			}
+			@Override
+			public Adapter caseOutPlug(OutPlug object) {
+				return createOutPlugAdapter();
+			}
+			@Override
+			public Adapter casePipe(Pipe object) {
+				return createPipeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -282,6 +298,62 @@ public class AgricolaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoundAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MInPlug <em>In Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MInPlug
+	 * @generated
+	 */
+	public Adapter createInPlugAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MPlug <em>Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MPlug
+	 * @generated
+	 */
+	public Adapter createPlugAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MOutPlug <em>Out Plug</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MOutPlug
+	 * @generated
+	 */
+	public Adapter createOutPlugAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.bistiboy.agricola.MPipe <em>Pipe</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.bistiboy.agricola.MPipe
+	 * @generated
+	 */
+	public Adapter createPipeAdapter() {
 		return null;
 	}
 

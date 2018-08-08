@@ -3,6 +3,7 @@
 package com.bistiboy.agricola.provider;
 
 
+import com.bistiboy.agricola.MAgricolaFactory;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Parcel;
 import com.bistiboy.agricola.ParcelType;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -135,6 +137,37 @@ public class ParcelItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MAgricolaPackage.Literals.PARCEL__IN);
+			childrenFeatures.add(MAgricolaPackage.Literals.PARCEL__OUT);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns Parcel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -178,6 +211,10 @@ public class ParcelItemProvider
 			case MAgricolaPackage.PARCEL__Y:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case MAgricolaPackage.PARCEL__IN:
+			case MAgricolaPackage.PARCEL__OUT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -192,6 +229,16 @@ public class ParcelItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MAgricolaPackage.Literals.PARCEL__IN,
+				 MAgricolaFactory.eINSTANCE.createInPlug()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MAgricolaPackage.Literals.PARCEL__OUT,
+				 MAgricolaFactory.eINSTANCE.createOutPlug()));
 	}
 
 	/**

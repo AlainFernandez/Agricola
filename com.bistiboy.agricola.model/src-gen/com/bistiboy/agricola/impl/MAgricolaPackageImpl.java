@@ -8,27 +8,20 @@ import com.bistiboy.agricola.Creation;
 import com.bistiboy.agricola.CreationCard;
 import com.bistiboy.agricola.Gamer;
 import com.bistiboy.agricola.GamerBoard;
-import com.bistiboy.agricola.MActionCard;
-import com.bistiboy.agricola.MAgricola;
+import com.bistiboy.agricola.InPlug;
 import com.bistiboy.agricola.MAgricolaFactory;
 import com.bistiboy.agricola.MAgricolaPackage;
-import com.bistiboy.agricola.MCreation;
-import com.bistiboy.agricola.MCreationCard;
-import com.bistiboy.agricola.MGamer;
-import com.bistiboy.agricola.MGamerBoard;
-import com.bistiboy.agricola.MMainBoard;
-import com.bistiboy.agricola.MParcel;
-import com.bistiboy.agricola.MRound;
-import com.bistiboy.agricola.MSupplierCard;
-import com.bistiboy.agricola.MSupply;
 import com.bistiboy.agricola.MainBoard;
+import com.bistiboy.agricola.OutPlug;
 import com.bistiboy.agricola.Parcel;
 import com.bistiboy.agricola.ParcelType;
-
+import com.bistiboy.agricola.Pipe;
+import com.bistiboy.agricola.Plug;
 import com.bistiboy.agricola.Resource;
 import com.bistiboy.agricola.Round;
 import com.bistiboy.agricola.SupplierCard;
 import com.bistiboy.agricola.Supply;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -123,6 +116,34 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 * @generated
 	 */
 	private EClass roundEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inPlugEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass plugEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass outPlugEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pipeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,6 +284,24 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 */
 	public EAttribute getParcel_Y() {
 		return (EAttribute)parcelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParcel_In() {
+		return (EReference)parcelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParcel_Out() {
+		return (EReference)parcelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -531,6 +570,105 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInPlug() {
+		return inPlugEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPlug() {
+		return plugEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlug_Name() {
+		return (EAttribute)plugEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPlug_Pipe() {
+		return (EReference)plugEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOutPlug() {
+		return outPlugEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPipe() {
+		return pipeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPipe_Name() {
+		return (EAttribute)pipeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPipe_Unit() {
+		return (EAttribute)pipeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPipe_Value() {
+		return (EAttribute)pipeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPipe_In() {
+		return (EReference)pipeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPipe_Out() {
+		return (EReference)pipeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getParcelType() {
 		return parcelTypeEEnum;
 	}
@@ -580,6 +718,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		createEAttribute(parcelEClass, PARCEL__TYPE);
 		createEAttribute(parcelEClass, PARCEL__X);
 		createEAttribute(parcelEClass, PARCEL__Y);
+		createEReference(parcelEClass, PARCEL__IN);
+		createEReference(parcelEClass, PARCEL__OUT);
 
 		gamerEClass = createEClass(GAMER);
 		createEAttribute(gamerEClass, GAMER__NAME);
@@ -619,6 +759,21 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		createEAttribute(roundEClass, ROUND__NAME);
 		createEReference(roundEClass, ROUND__ACTIONCARD);
 
+		inPlugEClass = createEClass(IN_PLUG);
+
+		plugEClass = createEClass(PLUG);
+		createEAttribute(plugEClass, PLUG__NAME);
+		createEReference(plugEClass, PLUG__PIPE);
+
+		outPlugEClass = createEClass(OUT_PLUG);
+
+		pipeEClass = createEClass(PIPE);
+		createEAttribute(pipeEClass, PIPE__NAME);
+		createEAttribute(pipeEClass, PIPE__UNIT);
+		createEAttribute(pipeEClass, PIPE__VALUE);
+		createEReference(pipeEClass, PIPE__IN);
+		createEReference(pipeEClass, PIPE__OUT);
+
 		// Create enums
 		parcelTypeEEnum = createEEnum(PARCEL_TYPE);
 		resourceEEnum = createEEnum(RESOURCE);
@@ -657,6 +812,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		// Add supertypes to classes
 		supplierCardEClass.getESuperTypes().add(this.getActionCard());
 		creationCardEClass.getESuperTypes().add(this.getActionCard());
+		inPlugEClass.getESuperTypes().add(this.getPlug());
+		outPlugEClass.getESuperTypes().add(this.getPlug());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(gamerBoardEClass, GamerBoard.class, "GamerBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -668,6 +825,8 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		initEAttribute(getParcel_Type(), this.getParcelType(), "type", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParcel_X(), theXMLTypePackage.getInt(), "x", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParcel_Y(), theXMLTypePackage.getInt(), "y", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParcel_In(), this.getInPlug(), null, "in", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParcel_Out(), this.getOutPlug(), null, "out", null, 0, 1, Parcel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gamerEClass, Gamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGamer_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -709,6 +868,21 @@ public class MAgricolaPackageImpl extends EPackageImpl implements MAgricolaPacka
 		initEClass(roundEClass, Round.class, "Round", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRound_Name(), theXMLTypePackage.getString(), "name", null, 1, 1, Round.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRound_Actioncard(), this.getActionCard(), null, "actioncard", null, 0, -1, Round.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(inPlugEClass, InPlug.class, "InPlug", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(plugEClass, Plug.class, "Plug", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlug_Name(), ecorePackage.getEString(), "name", null, 0, 1, Plug.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPlug_Pipe(), this.getPipe(), null, "pipe", null, 0, 1, Plug.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(outPlugEClass, OutPlug.class, "OutPlug", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pipeEClass, Pipe.class, "Pipe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPipe_Name(), ecorePackage.getEString(), "name", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPipe_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPipe_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipe_In(), this.getInPlug(), null, "in", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipe_Out(), this.getOutPlug(), null, "out", null, 0, 1, Pipe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(parcelTypeEEnum, ParcelType.class, "ParcelType");

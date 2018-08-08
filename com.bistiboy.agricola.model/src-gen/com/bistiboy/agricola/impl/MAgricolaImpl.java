@@ -4,22 +4,27 @@ package com.bistiboy.agricola.impl;
 
 import com.bistiboy.agricola.ActionCard;
 import com.bistiboy.agricola.Agricola;
-import com.bistiboy.agricola.AgricolaPackage;
-import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Gamer;
+import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.MainBoard;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
- public class MAgricolaImpl extends MinimalEObjectImpl.Container implements Agricola {
+public class MAgricolaImpl extends MinimalEObjectImpl.Container implements Agricola {
 	/**
 	 * The cached value of the '{@link #getGamers() <em>Gamers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

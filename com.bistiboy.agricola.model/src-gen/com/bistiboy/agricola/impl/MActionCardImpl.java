@@ -3,13 +3,14 @@
 package com.bistiboy.agricola.impl;
 
 import com.bistiboy.agricola.ActionCard;
-import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
- public abstract class MActionCardImpl extends MinimalEObjectImpl.Container implements ActionCard {
+public abstract class MActionCardImpl extends MinimalEObjectImpl.Container implements ActionCard {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

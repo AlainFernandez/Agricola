@@ -134,6 +134,32 @@ public class AgricolaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MAgricolaPackage.IN_PLUG: {
+				InPlug inPlug = (InPlug)theEObject;
+				T result = caseInPlug(inPlug);
+				if (result == null) result = casePlug(inPlug);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.PLUG: {
+				Plug plug = (Plug)theEObject;
+				T result = casePlug(plug);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.OUT_PLUG: {
+				OutPlug outPlug = (OutPlug)theEObject;
+				T result = caseOutPlug(outPlug);
+				if (result == null) result = casePlug(outPlug);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MAgricolaPackage.PIPE: {
+				Pipe pipe = (Pipe)theEObject;
+				T result = casePipe(pipe);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -300,6 +326,66 @@ public class AgricolaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRound(Round object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>In Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>In Plug</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInPlug(InPlug object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Plug</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePlug(Plug object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Out Plug</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Out Plug</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOutPlug(OutPlug object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Pipe</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Pipe</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePipe(Pipe object) {
 		return null;
 	}
 

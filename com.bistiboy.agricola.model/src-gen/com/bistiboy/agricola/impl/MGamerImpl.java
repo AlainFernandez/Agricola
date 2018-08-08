@@ -2,17 +2,18 @@
  */
 package com.bistiboy.agricola.impl;
 
-import com.bistiboy.agricola.AgricolaPackage;
-import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Gamer;
 import com.bistiboy.agricola.GamerBoard;
+import com.bistiboy.agricola.MAgricolaPackage;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
- public class MGamerImpl extends MinimalEObjectImpl.Container implements Gamer {
+public class MGamerImpl extends MinimalEObjectImpl.Container implements Gamer {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

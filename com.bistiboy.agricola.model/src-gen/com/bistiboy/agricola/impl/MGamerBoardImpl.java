@@ -2,20 +2,25 @@
  */
 package com.bistiboy.agricola.impl;
 
-import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.GamerBoard;
-import com.bistiboy.agricola.AgricolaPackage;
+import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.Parcel;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
- public class MGamerBoardImpl extends MinimalEObjectImpl.Container implements GamerBoard {
+public class MGamerBoardImpl extends MinimalEObjectImpl.Container implements GamerBoard {
 	/**
 	 * The cached value of the '{@link #getParcels() <em>Parcels</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

@@ -302,6 +302,98 @@ public class AgricolaItemProviderAdapterFactory extends AgricolaAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.bistiboy.agricola.MInPlug} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InPlugItemProvider inPlugItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.bistiboy.agricola.MInPlug}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInPlugAdapter() {
+		if (inPlugItemProvider == null) {
+			inPlugItemProvider = new InPlugItemProvider(this);
+		}
+
+		return inPlugItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.bistiboy.agricola.MPlug} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PlugItemProvider plugItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.bistiboy.agricola.MPlug}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPlugAdapter() {
+		if (plugItemProvider == null) {
+			plugItemProvider = new PlugItemProvider(this);
+		}
+
+		return plugItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.bistiboy.agricola.MOutPlug} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutPlugItemProvider outPlugItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.bistiboy.agricola.MOutPlug}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOutPlugAdapter() {
+		if (outPlugItemProvider == null) {
+			outPlugItemProvider = new OutPlugItemProvider(this);
+		}
+
+		return outPlugItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.bistiboy.agricola.MPipe} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PipeItemProvider pipeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.bistiboy.agricola.MPipe}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPipeAdapter() {
+		if (pipeItemProvider == null) {
+			pipeItemProvider = new PipeItemProvider(this);
+		}
+
+		return pipeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +502,10 @@ public class AgricolaItemProviderAdapterFactory extends AgricolaAdapterFactory i
 		if (creationItemProvider != null) creationItemProvider.dispose();
 		if (mainBoardItemProvider != null) mainBoardItemProvider.dispose();
 		if (roundItemProvider != null) roundItemProvider.dispose();
+		if (inPlugItemProvider != null) inPlugItemProvider.dispose();
+		if (plugItemProvider != null) plugItemProvider.dispose();
+		if (outPlugItemProvider != null) outPlugItemProvider.dispose();
+		if (pipeItemProvider != null) pipeItemProvider.dispose();
 	}
 
 }

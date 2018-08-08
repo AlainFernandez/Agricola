@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1170" xmi:id="_lXPMIJsWEeiy1KyI46dslw" name="OutPlug">
+  <rootEClass href="http://com.bistiboy.agricola/1.0#//OutPlug"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_lXUEoJsWEeiy1KyI46dslw" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_lXUEoZsWEeiy1KyI46dslw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://com.bistiboy.agricola/1.0#//Plug/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_lXUEopsWEeiy1KyI46dslw" name="Control pipe">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_lXUEo5sWEeiy1KyI46dslw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://com.bistiboy.agricola/1.0#//Plug/pipe"/>
+    </domainModelReference>
+  </children>
+  <ecorePaths>/com.bistiboy.agricola.model/model/agricola.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>

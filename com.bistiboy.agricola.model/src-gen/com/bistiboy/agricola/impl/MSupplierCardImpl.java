@@ -2,20 +2,24 @@
  */
 package com.bistiboy.agricola.impl;
 
-import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.SupplierCard;
 import com.bistiboy.agricola.Supply;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
- public class MSupplierCardImpl extends ActionCardImpl implements SupplierCard {
+public class MSupplierCardImpl extends ActionCardImpl implements SupplierCard {
 	/**
 	 * The cached value of the '{@link #getSupply() <em>Supply</em>}' containment reference.
 	 * <!-- begin-user-doc -->

@@ -8,5 +8,16 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="com.opcoach.agricola.ui.pipeconnection">
+         <iterate>
+            <instanceof
+                  value="com.bistiboy.agricola.Pipe">
+            </instanceof>
+         </iterate>
+      </definition>
+   </extension>
 
 </plugin>

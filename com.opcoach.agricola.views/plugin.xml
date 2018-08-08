@@ -3,6 +3,14 @@
 <plugin>
    <extension
          point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
+<file filePath="Pipe.view"/>
+
+<file filePath="OutPlug.view"/>
+
+<file filePath="Plug.view"/>
+
+<file filePath="InPlug.view"/>
+
 <file filePath="viewmodels/Round.view"/>
 
 <file filePath="viewmodels/MainBoard.view"/>

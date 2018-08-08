@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_uPd3YJcAEeinMPd35eUCIw">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmlns:ui="http://www.eclipse.org/ui/2010/UIModel/application/ui" xmi:id="_uPd3YJcAEeinMPd35eUCIw">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_u_9gMJcAEeinMPd35eUCIw" featurename="descriptors" parentElementId="xpath:/">
     <elements xsi:type="basic:PartDescriptor" xmi:id="_xZ8PUJcAEeinMPd35eUCIw" elementId="com.opcoach.agricola.ui.partdescriptor.agricolagame" label="AgricolaGame" contributionURI="bundleclass://com.opcoach.agricola.ui/com.opcoach.agricola.ui.parts.AgricolaPart">
       <tags>View</tags>
     </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_TK860Jm2Eei0Qu9iw0qnQg" elementId="com.opcoach.agricola.ui.agricolaFormPart" label="Editor" allowMultiple="true" contributionURI="bundleclass://com.opcoach.agricola.ui/com.opcoach.agricola.ui.parts.AgricolaFormPart"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_l-45cJr_EeiriOdb8jhKGA" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_sbABQJr_EeiriOdb8jhKGA" elementId="com.opcoach.agricola.ui.command.connectPipe" commandName="Connect Pipe"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_mlb8EJr_EeiriOdb8jhKGA" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_z0VmUJr_EeiriOdb8jhKGA" elementId="com.opcoach.agricola.ui.handler.0" contributionURI="bundleclass://com.opcoach.agricola.ui/com.opcoach.agricola.ui.handlers.ConnectPipeHandler" command="_sbABQJr_EeiriOdb8jhKGA"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_aXLPcJr_EeiriOdb8jhKGA" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_LbN3YJsIEeiy1KyI46dslw" elementId="com.opcoach.agricola.ui.menucontribution.0" parentId="com.bistiboy.agricola.presentation.AgricolaEditorID">
+      <children xsi:type="menu:HandledMenuItem" xmi:id="_ibLMAJsIEeiy1KyI46dslw" elementId="com.opcoach.agricola.ui.handledmenuitem.connectpipe" label="Connect Pipe" command="_sbABQJr_EeiriOdb8jhKGA">
+        <visibleWhen xsi:type="ui:CoreExpression" xmi:id="_pPissJsREeiy1KyI46dslw" coreExpressionId="com.opcoach.agricola.ui.pipeconnection"/>
+      </children>
+    </elements>
   </fragments>
 </fragment:ModelFragments>

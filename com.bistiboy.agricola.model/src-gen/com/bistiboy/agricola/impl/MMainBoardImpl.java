@@ -3,20 +3,24 @@
 package com.bistiboy.agricola.impl;
 
 import com.bistiboy.agricola.ActionCard;
-import com.bistiboy.agricola.AgricolaPackage;
 import com.bistiboy.agricola.MAgricolaPackage;
 import com.bistiboy.agricola.MainBoard;
 import com.bistiboy.agricola.Round;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
- public class MMainBoardImpl extends MinimalEObjectImpl.Container implements MainBoard {
+public class MMainBoardImpl extends MinimalEObjectImpl.Container implements MainBoard {
 	/**
 	 * The cached value of the '{@link #getFixedCards() <em>Fixed Cards</em>}' reference list.
 	 * <!-- begin-user-doc -->

@@ -67,6 +67,10 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 			case MAgricolaPackage.CREATION: return createCreation();
 			case MAgricolaPackage.MAIN_BOARD: return createMainBoard();
 			case MAgricolaPackage.ROUND: return createRound();
+			case MAgricolaPackage.IN_PLUG: return createInPlug();
+			case MAgricolaPackage.PLUG: return createPlug();
+			case MAgricolaPackage.OUT_PLUG: return createOutPlug();
+			case MAgricolaPackage.PIPE: return createPipe();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,6 +208,46 @@ public class MAgricolaFactoryImpl extends EFactoryImpl implements MAgricolaFacto
 	public Round createRound() {
 		RoundImpl round = new RoundImpl();
 		return round;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InPlug createInPlug() {
+		InPlugImpl inPlug = new InPlugImpl();
+		return inPlug;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Plug createPlug() {
+		PlugImpl plug = new PlugImpl();
+		return plug;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OutPlug createOutPlug() {
+		OutPlugImpl outPlug = new OutPlugImpl();
+		return outPlug;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Pipe createPipe() {
+		PipeImpl pipe = new PipeImpl();
+		return pipe;
 	}
 
 	/**

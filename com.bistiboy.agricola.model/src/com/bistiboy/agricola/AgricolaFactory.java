@@ -14,16 +14,15 @@ public interface AgricolaFactory extends MAgricolaFactory
 	public GamerBoard createGamerBoard();
 	public Parcel createParcel();
 	public Gamer createGamer();
-	public Gamer createGamer(String name);
 	public Agricola createAgricola();
 	public SupplierCard createSupplierCard();
 	public CreationCard createCreationCard();
 	public Supply createSupply();
-	public Supply createSupply(int quantity, Resource r);
 	public Creation createCreation();
-	public Creation createCreation(String name, Supply... supplies);
 	public MainBoard createMainBoard();
 	public Round createRound();
-	public Round createRound(String name);
-
+	public InPlug createInPlug();
+	public Plug createPlug();
+	public OutPlug createOutPlug();
+	public Pipe createPipe();
 }
