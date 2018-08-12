@@ -1,8 +1,10 @@
 package com.opcoach.agricola.ui.dialogs;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
@@ -11,14 +13,11 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IDialogSettings;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.osgi.service.resolver.ExportPackageDescription;
 import org.eclipse.osgi.service.resolver.VersionRange;
-import org.eclipse.pde.internal.core.PDECore;
-import org.eclipse.pde.internal.core.ibundle.IBundleModel;
-import org.eclipse.pde.internal.core.ibundle.IBundlePluginModelBase;
-import org.eclipse.pde.internal.core.text.bundle.ImportPackageHeader;
-import org.eclipse.pde.internal.core.text.bundle.ImportPackageObject;
-import org.eclipse.pde.internal.ui.*;
+
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
@@ -38,6 +37,7 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 	//private IPluginModelBase[] fModels;
 	private Set<InPlug> inPlugs;
 	private Set<OutPlug> outPlugs;
+	private Set<Plug> plugs;
 	
 	
 	
@@ -142,122 +142,128 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 			Set<OutPlug> result = new HashSet<OutPlug>();
 			return result;
 		}
+		
 	}
 
-	public FilteredPipesSelectionDialog4(Shell parentShell, Agricola a, boolean multipleSelection) {
-		super(parentShell, multipleSelection);
+	public FilteredPipesSelectionDialog4(Shell parentShell, Agricola a) {
+		super(parentShell, false);
 		AgricolaAdaptor aa = new AgricolaAdaptor(a);
 		inPlugs = aa.getInPlugs();
 		outPlugs = aa.getOutPlugs();
+		plugs = new HashSet<Plug>();
+		plugs.addAll(inPlugs);
+		plugs.addAll(outPlugs);
+		
 		setTitle("Select the Plug where you want to connect that Pipe");
 		setMessage("beware of the direction (a Pipe which connected to an InPlug on one hand, can only "
 				+ "be connected to an OutPlug on the other hand and vice versa");
-		PDEPlugin.getDefault().getLabelProvider().connect(this);
-		setListLabelProvider(PDEPlugin.getDefault().getLabelProvider());
+		// see http://blog.eclipse-tips.com/2008/10/extending-filtereditemsselectiondialog.html
+//		PDEPlugin.getDefault().getLabelProvider().connect(this);
+//		setListLabelProvider(PDEPlugin.getDefault().getLabelProvider());
 	}
 
 	@Override
 	protected void configureShell(Shell newShell) {
 		super.configureShell(newShell);
-		PlatformUI.getWorkbench().getHelpSystem().setHelp(newShell, IHelpContextIds.PLUGIN_SELECTION);
+//		PlatformUI.getWorkbench().getHelpSystem().setHelp(newShell, IHelpContextIds.PLUGIN_SELECTION);
 	}
 
 	@Override
 	public boolean close() {
-		PDEPlugin.getDefault().getLabelProvider().disconnect(this);
+//		PDEPlugin.getDefault().getLabelProvider().disconnect(this);
 		return super.close();
 	}
 
-	private static IPluginModelBase[] getElements(boolean includeFragments) {
-		return PluginRegistry.getActiveModels(includeFragments);
-	}
+//	private static IPluginModelBase[] getElements(boolean includeFragments) {
+//		return PluginRegistry.getActiveModels(includeFragments);
+//	}
 
-	public static HashSet<String> getExistingImports(IPluginModelBase model, boolean includeImportPkg) {
-		HashSet<String> existingImports = new HashSet<>();
-		addSelfAndDirectImports(existingImports, model);
-		if (model instanceof IFragmentModel) {
-			IFragment fragment = ((IFragmentModel) model).getFragment();
-			IPluginModelBase host = PluginRegistry.findModel(fragment.getPluginId());
-			if (host instanceof IPluginModel) {
-				addSelfAndDirectImports(existingImports, host);
-			}
-		}
-		if (includeImportPkg && model instanceof IBundlePluginModelBase) {
-			addImportedPackages((IBundlePluginModelBase) model, existingImports);
-		}
-		return existingImports;
-	}
+//	public static HashSet<String> getExistingImports(IPluginModelBase model, boolean includeImportPkg) {
+//		HashSet<String> existingImports = new HashSet<>();
+//		addSelfAndDirectImports(existingImports, model);
+//		if (model instanceof IFragmentModel) {
+//			IFragment fragment = ((IFragmentModel) model).getFragment();
+//			IPluginModelBase host = PluginRegistry.findModel(fragment.getPluginId());
+//			if (host instanceof IPluginModel) {
+//				addSelfAndDirectImports(existingImports, host);
+//			}
+//		}
+//		if (includeImportPkg && model instanceof IBundlePluginModelBase) {
+//			addImportedPackages((IBundlePluginModelBase) model, existingImports);
+//		}
+//		return existingImports;
+//	}
 
-	private static void addSelfAndDirectImports(HashSet<String> set, IPluginModelBase model) {
-		set.add(model.getPluginBase().getId());
-		IPluginImport[] imports = model.getPluginBase().getImports();
-		for (IPluginImport pImport : imports) {
-			String id = pImport.getId();
-			if (set.add(id)) {
-				addReexportedImport(set, id);
-			}
-		}
-	}
+//	private static void addSelfAndDirectImports(HashSet<String> set, IPluginModelBase model) {
+//		set.add(model.getPluginBase().getId());
+//		IPluginImport[] imports = model.getPluginBase().getImports();
+//		for (IPluginImport pImport : imports) {
+//			String id = pImport.getId();
+//			if (set.add(id)) {
+//				addReexportedImport(set, id);
+//			}
+//		}
+//	}
 
-	private static void addReexportedImport(HashSet<String> set, String id) {
-		IPluginModelBase model = PluginRegistry.findModel(id);
-		if (model != null) {
-			IPluginImport[] imports = model.getPluginBase().getImports();
-			for (IPluginImport pImport : imports) {
-				if (pImport.isReexported() && set.add(pImport.getId())) {
-					addReexportedImport(set, pImport.getId());
-				}
-			}
-		}
-	}
+//	private static void addReexportedImport(HashSet<String> set, String id) {
+//		IPluginModelBase model = PluginRegistry.findModel(id);
+//		if (model != null) {
+//			IPluginImport[] imports = model.getPluginBase().getImports();
+//			for (IPluginImport pImport : imports) {
+//				if (pImport.isReexported() && set.add(pImport.getId())) {
+//					addReexportedImport(set, pImport.getId());
+//				}
+//			}
+//		}
+//	}
 
-	private static void addImportedPackages(IBundlePluginModelBase base, HashSet<String> existingImports) {
-		HashMap<String, ImportPackageObject> map = getImportPackages(base);
-		if (map == null) {
-			return;
-		}
+//	private static void addImportedPackages(IBundlePluginModelBase base, HashSet<String> existingImports) {
+//		HashMap<String, ImportPackageObject> map = getImportPackages(base);
+//		if (map == null) {
+//			return;
+//		}
 
-		ExportPackageDescription exported[] = PDECore.getDefault().getModelManager().getState().getState().getExportedPackages();
-		for (int i = 0; i < exported.length; i++) {
-			// iterate through all the exported packages
-			ImportPackageObject ipo = map.get(exported[i].getName());
-			// if we find an exported package that matches a pkg in the map, then the exported package matches a package on our import-package statement
-			if (ipo != null) {
-				// check version to make sure we only add bundles from valid packages
-				String version = ipo.getVersion();
-				if (version != null) {
-					try {
-						if (!new VersionRange(version).isIncluded(exported[i].getVersion()))
-						 {
-							continue;
-						// NFE if ImportPackageObject's version is improperly formatted - ignore any matching imported packages since version is invalid
-						}
-					} catch (NumberFormatException e) {
-						continue;
-					}
-				}
-				existingImports.add(exported[i].getSupplier().getSymbolicName());
-			}
-		}
-	}
+		//ExportPackageDescription exported[] = PDECore.getDefault().getModelManager().getState().getState().getExportedPackages();
+//		for (int i = 0; i < exported.length; i++) {
+//			// iterate through all the exported packages
+//			ImportPackageObject ipo = map.get(exported[i].getName());
+//			// if we find an exported package that matches a pkg in the map, then the exported package matches a package on our import-package statement
+//			if (ipo != null) {
+//				// check version to make sure we only add bundles from valid packages
+//				String version = ipo.getVersion();
+//				if (version != null) {
+//					try {
+//						if (!new VersionRange(version).isIncluded(exported[i].getVersion()))
+//						 {
+//							continue;
+//						// NFE if ImportPackageObject's version is improperly formatted - ignore any matching imported packages since version is invalid
+//						}
+//					} catch (NumberFormatException e) {
+//						continue;
+//					}
+//				}
+//				existingImports.add(exported[i].getSupplier().getSymbolicName());
+//			}
+//		}
+//	}
 
 	// returns null instead of empty map so we know not to iterate through exported packages
-	private static HashMap<String, ImportPackageObject> getImportPackages(IBundlePluginModelBase base) {
-		IBundleModel bmodel = base.getBundleModel();
-		if (bmodel != null) {
-			ImportPackageHeader header = (ImportPackageHeader) bmodel.getBundle().getManifestHeader(Constants.IMPORT_PACKAGE);
-			if (header != null) {
-				// create a map of all the packages we import
-				HashMap<String, ImportPackageObject> map = new HashMap<>();
-				ImportPackageObject[] packages = header.getPackages();
-				for (ImportPackageObject importPackage : packages) {
-					map.put(importPackage.getName(), importPackage);
-				}
-				return map;
-			}
-		}
-		return null;
-	}
+//	private static HashMap<String, ImportPackageObject> getImportPackages(IBundlePluginModelBase base) {
+//		IBundleModel bmodel = base.getBundleModel();
+//		if (bmodel != null) {
+//			ImportPackageHeader header = (ImportPackageHeader) bmodel.getBundle().getManifestHeader(Constants.IMPORT_PACKAGE);
+//			if (header != null) {
+//				// create a map of all the packages we import
+//				HashMap<String, ImportPackageObject> map = new HashMap<>();
+//				ImportPackageObject[] packages = header.getPackages();
+//				for (ImportPackageObject importPackage : packages) {
+//					map.put(importPackage.getName(), importPackage);
+//				}
+//				return map;
+//			}
+//		}
+//		return null;
+//	}
 
 	@Override
 	protected Control createExtendedContentArea(Composite parent) {
@@ -271,8 +277,8 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 
 	@Override
 	protected void fillContentProvider(AbstractContentProvider contentProvider, ItemsFilter itemsFilter, IProgressMonitor progressMonitor) throws CoreException {
-		for (IPluginModelBase fModel : fModels) {
-			contentProvider.add(fModel, itemsFilter);
+		for (Plug p : plugs) {
+			contentProvider.add(p, itemsFilter);
 			progressMonitor.worked(1);
 		}
 		progressMonitor.done();
@@ -280,20 +286,22 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 
 	@Override
 	protected IDialogSettings getDialogSettings() {
-		IDialogSettings settings = PDEPlugin.getDefault().getDialogSettings().getSection(DIALOG_SETTINGS);
+		//IDialogSettings settings = Activator.getDefault().getDialogSettings().getSection(SETTINGS);
+		IDialogSettings settings = getDialogSettings();
 
-		if (settings == null) {
-			settings = PDEPlugin.getDefault().getDialogSettings().addNewSection(DIALOG_SETTINGS);
-		}
+//		if (settings == null) {
+//			//settings = Activator.getDefault().getDialogSettings().addNewSection(SETTINGS);
+//			IDialogSettings settings = getDialogSettings();
+//		}
 
 		return settings;
 	}
 
 	@Override
 	public String getElementName(Object item) {
-		if (item instanceof IPluginModelBase) {
-			IPluginModelBase model = (IPluginModelBase) item;
-			return model.getPluginBase().getId();
+		if (item instanceof Plug) {
+			Plug p = (Plug) item;
+			return p.getName();
 		}
 		return null;
 	}
@@ -303,16 +311,24 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 		return new PlugSearchComparator();
 	}
 
-	@Override
-	protected IStatus validateItem(Object item) {
-		return new Status(IStatus.OK, IPDEUIConstants.PLUGIN_ID, 0, "", null); //$NON-NLS-1$
-	}
+
 
 	@Override
-	protected void createButtonsForButtonBar(Composite parent) {
-		createButton(parent, IDialogConstants.OK_ID, PDEUIMessages.ManifestEditor_addActionText, true);
-		createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
+	protected IStatus validateItem(Object item) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+//	@Override
+//	protected IStatus validateItem(Object item) {
+//		return new Status(IStatus.OK, IPDEUIConstants.PLUGIN_ID, 0, "", null); //$NON-NLS-1$
+//	}
+//
+//	@Override
+//	protected void createButtonsForButtonBar(Composite parent) {
+//		createButton(parent, IDialogConstants.OK_ID, PDEUIMessages.ManifestEditor_addActionText, true);
+//		createButton(parent, IDialogConstants.CANCEL_ID, IDialogConstants.CANCEL_LABEL, false);
+//	}
 
 }
 

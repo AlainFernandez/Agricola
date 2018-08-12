@@ -10,9 +10,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
 
+import com.bistiboy.agricola.Agricola;
 import com.bistiboy.agricola.Pipe;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog2;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog3;
+import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog4;
+import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog5;
 
 public class ConnectPipeHandler {
 	@Execute
@@ -26,8 +29,8 @@ public class ConnectPipeHandler {
 			EObject r = EcoreUtil.getRootContainer(p);
 			System.out.println("r.getClass().getName()= "+r.getClass().getName());
 			
-			FilteredPipesSelectionDialog2 dg = new FilteredPipesSelectionDialog2(sh, false, null, null, 0);
-			dg.setTitle("Select a Plug where to connect this Pipe");
+			FilteredPipesSelectionDialog4 dg = new FilteredPipesSelectionDialog4(sh,(Agricola)r);
+			
 			dg.open();
 			
 		}
