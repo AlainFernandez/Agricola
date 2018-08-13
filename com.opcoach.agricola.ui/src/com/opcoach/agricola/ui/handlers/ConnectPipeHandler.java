@@ -8,10 +8,12 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 
 import com.bistiboy.agricola.Agricola;
 import com.bistiboy.agricola.Pipe;
+import com.bistiboy.agricola.Plug;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog2;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog3;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog4;
@@ -30,8 +32,16 @@ public class ConnectPipeHandler {
 			System.out.println("r.getClass().getName()= "+r.getClass().getName());
 			
 			FilteredPipesSelectionDialog4 dg = new FilteredPipesSelectionDialog4(sh,(Agricola)r);
+			dg.setInitialPattern("*");
 			
-			dg.open();
+			dg.create();
+			if(dg.open() == Window.OK) {
+				Plug selectedPlug = (Plug)dg.getFirstResult();
+				System.out.println("vous avez sélectionné le Plug "+selectedPlug.getName());
+			}
+			
+			
+			
 			
 		}
 		
