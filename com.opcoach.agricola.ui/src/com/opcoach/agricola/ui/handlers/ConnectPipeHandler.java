@@ -16,7 +16,7 @@ import com.bistiboy.agricola.Pipe;
 import com.bistiboy.agricola.Plug;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog2;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog3;
-import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog4;
+import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog5;
 
 public class ConnectPipeHandler {
@@ -31,7 +31,7 @@ public class ConnectPipeHandler {
 			EObject r = EcoreUtil.getRootContainer(p);
 			System.out.println("r.getClass().getName()= "+r.getClass().getName());
 			
-			FilteredPipesSelectionDialog4 dg = new FilteredPipesSelectionDialog4(sh,(Agricola)r);
+			FilteredPipesSelectionDialog dg = new FilteredPipesSelectionDialog(sh,(Agricola)r);
 			dg.setInitialPattern("*");
 			
 			dg.create();

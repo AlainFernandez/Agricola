@@ -7,6 +7,7 @@ import java.util.Set;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.DialogSettings;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -26,7 +27,7 @@ import com.bistiboy.agricola.InPlug;
 import com.bistiboy.agricola.OutPlug;
 import com.bistiboy.agricola.Plug;
 
-public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog {
+public class FilteredPipesSelectionDialog extends FilteredItemsSelectionDialog {
 
 	private static final String DIALOG_SETTINGS = "org.eclipse.pde.ui.dialogs.PluginSelectionDialog"; //$NON-NLS-1$
 	//private IPluginModelBase[] fModels;
@@ -146,7 +147,7 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 		}
 	}
 
-	public FilteredPipesSelectionDialog4(Shell parentShell, Agricola a) {
+	public FilteredPipesSelectionDialog(Shell parentShell, Agricola a) {
 		super(parentShell, false);
 		AgricolaAdaptor aa = new AgricolaAdaptor(a);
 		inPlugs = aa.getInPlugs();
@@ -348,7 +349,7 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 	@Override
 	protected IStatus validateItem(Object item) {
 		// TODO Auto-generated method stub
-		return null;
+		return Status.OK_STATUS;
 	}
 
 //	@Override
