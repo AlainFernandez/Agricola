@@ -7,6 +7,7 @@ import java.util.Set;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.DialogSettings;
 import org.eclipse.jface.dialogs.IDialogSettings;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -348,7 +349,7 @@ public class FilteredPipesSelectionDialog4 extends FilteredItemsSelectionDialog 
 	@Override
 	protected IStatus validateItem(Object item) {
 		// TODO Auto-generated method stub
-		return null;
+		return Status.OK_STATUS;
 	}
 
 //	@Override
