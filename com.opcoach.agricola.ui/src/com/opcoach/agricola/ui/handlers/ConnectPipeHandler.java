@@ -14,10 +14,8 @@ import org.eclipse.swt.widgets.Shell;
 import com.bistiboy.agricola.Agricola;
 import com.bistiboy.agricola.Pipe;
 import com.bistiboy.agricola.Plug;
-import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog2;
-import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog3;
 import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog;
-import com.opcoach.agricola.ui.dialogs.FilteredPipesSelectionDialog5;
+
 
 public class ConnectPipeHandler {
 	@Execute
